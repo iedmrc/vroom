@@ -58,6 +58,7 @@ OsrmRoutedWrapper::get_matrix(const std::vector<Location>& locs) const {
 
   // Removing headers.
   std::string json_content = response.substr(response.find("{"));
+  json_content.replace(json_content.find("distance"), 8, "duration");
 
   // Expected matrix size.
   std::size_t m_size = locs.size();
