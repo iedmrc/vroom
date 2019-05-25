@@ -51,6 +51,7 @@ OsrmRoutedWrapper::build_query(const std::vector<Location>& locations,
 
 Matrix<Cost>
 OsrmRoutedWrapper::get_matrix(const std::vector<Location>& locs) const {
+  std::string extra_args = "annotations=distance";
   std::string query = this->build_query(locs, "table");
 
   std::string response = this->send_then_receive(query);
